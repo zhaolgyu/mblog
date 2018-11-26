@@ -26,6 +26,7 @@ spring:
         url: jdbc:mysql://localhost/db_mblog?useSSL=false&characterEncoding=utf8
         username: root
         password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
 
     jpa:
         database: mysql
@@ -50,6 +51,9 @@ spring:
         port: 25
         properties:
             mail.smtp.auth: true
+mybatis:
+  mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: mblog.entity # 注意：对应实体类的路径
 
 # site.theme: [default|card]
 site:
