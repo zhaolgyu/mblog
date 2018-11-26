@@ -15,6 +15,9 @@ public class PersonServiceImpl implements PersonService{
     public Person selectPerson(){
         Person p = personDao.selectPerson(1);
         System.out.println("吃屎0");
+        System.out.println("吃屎0");
+        System.out.println("吃屎0");
+        System.out.println("吃屎0");
         return p;
     }
 }
