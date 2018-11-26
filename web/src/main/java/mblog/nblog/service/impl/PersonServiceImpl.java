@@ -14,6 +14,7 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public Person selectPerson(){
         Person p = personDao.selectPerson(1);
+        System.out.println("吃屎0");
         return p;
     }
 }
