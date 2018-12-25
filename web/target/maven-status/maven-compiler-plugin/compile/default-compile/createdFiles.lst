@@ -1,6 +1,7 @@
 mblog\web\controller\site\auth\EmailController.class
 mblog\web\controller\site\user\PasswordController.class
 mblog\web\formatter\StringEscapeEditor.class
+mblog\nblog\service\PersonService.class
 mblog\shiro\tags\HasRoleTag.class
 mblog\shiro\tags\PrincipalTag.class
 mblog\web\controller\site\auth\RegisterController.class
@@ -9,6 +10,7 @@ mblog\web\controller\site\IndexController.class
 mblog\web\controller\admin\PermissionController.class
 mblog\boot\EhCacheConfig.class
 mblog\web\controller\admin\PostController.class
+mblog\nblog\mapper\PersonMapper.class
 mblog\shiro\tags\AuthenticatedTag.class
 mblog\web\menu\MenusDirective.class
 mblog\web\controller\site\auth\LogoutController.class
@@ -16,6 +18,7 @@ mblog\web\controller\admin\ConfigController.class
 mblog\boot\FreemarkerConfig.class
 mblog\web\controller\site\comment\CommentController.class
 mblog\web\formatter\JsonUtils$1.class
+mblog\nblog\entity\Person.class
 mblog\shiro\tags\NotAuthenticatedTag.class
 mblog\web\controller\site\TagController.class
 mblog\web\controller\admin\ChannelController.class
@@ -34,8 +37,10 @@ mblog\web\interceptor\BaseInterceptor.class
 mblog\shiro\tags\UserTag.class
 mblog\shiro\authc\AccountAuthenticationInfo.class
 mblog\shiro\tags\GuestTag.class
+mblog\nblog\service\impl\PersonServiceImpl.class
 mblog\web\controller\site\user\AvatarController.class
 mblog\shiro\tags\LacksPermissionTag.class
+mblog\nblog\controller\PersonController.class
 mblog\boot\ContextStartup$1.class
 mblog\shiro\filter\AuthenticatedFilter.class
 mblog\boot\FastJsonHttpMessageConvertersConfiguration.class
@@ -64,6 +69,7 @@ mblog\web\exceptions\DefaultExceptionHandler.class
 mblog\web\controller\site\auth\CallbackController.class
 mblog\web\controller\site\user\UserController.class
 mblog\shiro\authc\AccountSubject.class
+mblog\nblog\controller\SpaceController.class
 mblog\web\filter\RequestCostFilter.class
 mblog\web\controller\admin\CommentController.class
 mblog\web\controller\site\users\UsersController.class

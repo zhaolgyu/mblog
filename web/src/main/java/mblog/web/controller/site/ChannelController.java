@@ -49,6 +49,9 @@ public class ChannelController extends BaseController {
 		model.put("channel", channel);
 		model.put("order", order);
 		model.put("pn", pn);
+		if(id==5){
+			return view("/channel/space");
+		}
 		return view(Views.ROUTE_POST_INDEX);
 	}
 

@@ -14,21 +14,10 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public Person selectPerson(){
         Person p = personDao.selectPerson(1);
-        System.out.println("吃屎0");
-        System.out.println("吃屎0");
-        System.out.println("吃屎0");
-        System.out.println("吃屎0");
+        System.out.println("批量改动吃屎0");
         System.out.println("haha");
+        System.out.println("11111");
 
-
-        System.out.println("haha");
-        System.out.println("haha");
-        System.out.println("haha");
-
-        System.out.println("11111");
-        System.out.println("11111");
-        System.out.println("11111");
-        System.out.println("11111");
         return p;
     }
 }

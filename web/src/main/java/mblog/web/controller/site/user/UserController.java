@@ -70,7 +70,6 @@ public class UserController extends BaseController {
 
 		model.put("page", page);
 		initUser(model);
-
 		return view(Views.USER_FEEDS);
 	}
 
@@ -87,7 +86,6 @@ public class UserController extends BaseController {
 
 		model.put("page", page);
 		initUser(model);
-
 		return view(Views.USER_POSTS);
 	}
 

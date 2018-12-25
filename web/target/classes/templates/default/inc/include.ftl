@@ -1,5 +1,5 @@
 <meta property="mtons:mblog" content="2.2.1">
-${site_metas}
+<#--${site_metas}-->
 
 <link rel="stylesheet" media='all' href="${base}/dist/vendors/bootstrap/css/bootstrap.min.css">
 <link rel='stylesheet' media='all' href="${base}/dist/vendors/share.js/css/share.min.css"/>
@@ -39,5 +39,5 @@ ${site_metas}
 <script type="text/javascript" src="${base}/theme/default/js/sea.config.js"></script>
 
 <!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" href="http://mtons.com/dist/images/logo.png"/>
-<link rel="shortcut icon" href="http://mtons.com/dist/images/logo.png"/>
+<#--<link rel="apple-touch-icon-precomposed" href="http://mtons.com/dist/images/logo.png"/>-->
+<link rel="shortcut icon" href="${base}/theme/default/images/logo.png"/>

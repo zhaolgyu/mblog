@@ -8,6 +8,8 @@ spring:
           charset: UTF-8
           force: true
           enabled: true
+        multipart:
+          location: E:\temp\images
     freemarker:
         template-loader-path:
         - classpath:/templates
@@ -20,7 +22,10 @@ spring:
             template_update_delay: 0
             datetime_format: yyyy-MM-dd HH:mm
             number_format: 0.##
-
+    mvc:
+        view:
+            prefix: /pages/
+            suffix: .html
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost/db_mblog?useSSL=false&characterEncoding=utf8
@@ -31,6 +36,7 @@ spring:
     jpa:
         database: mysql
         show-sql: false
+        # 更新或者创建
         hibernate:
             ddl-auto: update
         properties:
@@ -45,19 +51,22 @@ spring:
             max-file-size: 5MB
 
     mail:
-        host: smtp.mtons.com
-        username: example@mtons.com
-        password: Example2018
+        host: smp.mton.com
+        username: 123@163.com
+        password: 123456
         port: 25
         properties:
             mail.smtp.auth: true
 mybatis:
   mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
-  type-aliases-package: mblog.entity # 注意：对应实体类的路径
-
+  type-aliases-package: mblog.nblog.entity # 注意：对应实体类的路径
+logging:
+  level:
+     mblog.nblog.mapper : debug
 # site.theme: [default|card]
 site:
     theme: card
     store:
       root: /data/mblog/
       size: 2
+      repo: relative

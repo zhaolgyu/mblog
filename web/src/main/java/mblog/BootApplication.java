@@ -6,14 +6,18 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+
+import javax.servlet.MultipartConfigElement;
 
 /**
  * SprintBootApplication
  */
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
-@MapperScan("mblog.mapper")//将项目中对应的mapper类的路径加进来就可以了
+@MapperScan("mblog.nblog.mapper")//将项目中对应的mapper类的路径加进来就可以了
 public class BootApplication extends SpringBootServletInitializer {
 
     @Override
@@ -27,5 +31,4 @@ public class BootApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(BootApplication.class, args);
     }
-
 }

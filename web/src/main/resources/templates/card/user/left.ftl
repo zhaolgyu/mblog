@@ -50,6 +50,7 @@
             <li class="list-group-item">
                 <a href="${base}/user?method=fans"><i class="icon icon-user-follow"></i> 我的粉丝</a>
             </li>
+
         </ul>
 
         <ul class="list-group user-nav">

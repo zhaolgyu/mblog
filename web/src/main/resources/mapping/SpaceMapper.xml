@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mblog.nblog.mapper.SpaceMapper" >
+
+  <select id="findLyuPostByAuthorId" parameterType="int" resultType="mblog.modules.blog.entity.Post" >
+    select
+    *
+    from lyu_posts WHERE author_id=#{author_id}
+  </select>
+  
+  <insert id="saveLyuPost" useGeneratedKeys="true" keyProperty="id" parameterType="mblog.modules.blog.entity.Post" >
+    INSERT INTO lyu_posts (favors,comments,featured,status,title,views,weight) VALUES (0,0,0,0,#{post.title},0,0)
+  </insert>
+
+</mapper>
