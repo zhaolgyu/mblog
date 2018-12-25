@@ -11,6 +11,9 @@ package mblog.web.controller.site;
 
 import javax.servlet.http.HttpServletRequest;
 
+import mblog.nblog.entity.IP;
+import mblog.nblog.service.IPSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -20,6 +23,9 @@ import mblog.base.lang.Consts;
 import mblog.web.controller.BaseController;
 
 import java.net.InetAddress;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * @author langhsu
@@ -27,7 +33,10 @@ import java.net.InetAddress;
  */
 @Controller
 public class IndexController extends BaseController{
-	
+
+	@Autowired
+	private IPSerivce ipSerivce;
+
 	@RequestMapping(value= {"/", "/index"})
 	public String root(ModelMap model, HttpServletRequest request) {
 		String order = ServletRequestUtils.getStringParameter(request, "order", Consts.order.NEWEST);
@@ -35,9 +44,16 @@ public class IndexController extends BaseController{
 		model.put("order", order);
 		model.put("pn", pn);
 		System.out.println("欢迎页！");
-		System.out.println(getIpAddr(request));
+		IP ip = new IP();
+		ip.setIPAddress(getIpAddr(request));
+		ip.setLoginTime(LocalDateTime.now().toString());
+		System.out.println("ip:" + ip.getIPAddress());
+		System.out.println("时间:" + ip.getLoginTime());
+		int id = ipSerivce.saveIP(ip);
+		System.out.println("id:" + id);
 		return view(Views.INDEX);
 	}
+
 
 	public static String getIpAddr(HttpServletRequest request) {
 		String ipAddress = null;

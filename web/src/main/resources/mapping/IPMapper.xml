@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mblog.nblog.mapper.ipMapper" >
+
+  <insert id="saveIP"  parameterType="mblog.nblog.entity.IP" >
+    INSERT INTO lyu_ip(IPAddress,loginTime) VALUES(#{IPAddress},#{loginTime})
+  </insert>
+
+</mapper>
