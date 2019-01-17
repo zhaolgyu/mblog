@@ -8,8 +8,6 @@ spring:
           charset: UTF-8
           force: true
           enabled: true
-        multipart:
-          location: E:\temp\images
     freemarker:
         template-loader-path:
         - classpath:/templates
