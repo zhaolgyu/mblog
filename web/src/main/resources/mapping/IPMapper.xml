@@ -3,7 +3,7 @@
 <mapper namespace="mblog.nblog.mapper.ipMapper" >
 
   <insert id="saveIP"  parameterType="mblog.nblog.entity.IP" >
-    INSERT INTO lyu_ip(IPAddress,loginTime) VALUES(#{IPAddress},#{loginTime})
+    INSERT INTO lyu_ip(IPAddress,loginTime,IPAddressName) VALUES(#{IPAddress},#{loginTime},#{IPAddressName})
   </insert>
 
   <select id="searchIP" resultType="mblog.nblog.entity.IP">

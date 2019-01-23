@@ -15,6 +15,26 @@ public class IP {
         return loginTime;
     }
 
+    private String IPAddressName;
+
+    public String getIPAddressName() {
+        return IPAddressName;
+    }
+
+    public void setIPAddressName(String IPAddressName) {
+        this.IPAddressName = IPAddressName;
+    }
+
+    @Override
+    public String toString() {
+        return "IP{" +
+                "id=" + id +
+                ", IPAddress='" + IPAddress + '\'' +
+                ", loginTime='" + loginTime + '\'' +
+                ", IPAddressName='" + IPAddressName + '\'' +
+                '}';
+    }
+
     public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
     }
@@ -50,12 +70,4 @@ public class IP {
         return Objects.hash(IPAddress, loginTime);
     }
 
-    @Override
-    public String toString() {
-        return "IP{" +
-                "id=" + id +
-                ", IPAddress='" + IPAddress + '\'' +
-                ", loginTime=" + loginTime +
-                '}';
-    }
 }
