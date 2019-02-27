@@ -60,7 +60,7 @@ public class PersonController {
 //                    System.out.println(iputils.getAddresses(list.get((int)Thread.currentThread().getId()).getIPAddress().toString(),"utf-8") + ":--" + list.get((int)Thread.currentThread().getId()).getLoginTime());
 //                }
 //            });
-//                    threads[i].start();
+//                    threads[i].start();       qqq
 //        }
 
         return newList;
