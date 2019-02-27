@@ -25,7 +25,7 @@ public class ipUtils {
     public static String getAddresses(String content, String encodingString)
             throws UnsupportedEncodingException {
         // 这里调用淘宝API
-        String urlStr = "http://api.map.baidu.com/location/ip?ak=F454f8a5efe5e577997931cc01de3974";
+        String urlStr = "https://api.map.baidu.com/location/ip?&ak=vxDpx8Uc561MraDjwpkxejdr&coor=bd09ll&qq-pf-to=pcqq.c2c";
         // 从http://whois.pconline.com.cn取得IP所在的省市区信息
         String returnStr = getResult(urlStr, content, encodingString);
         if (returnStr != null) {
@@ -73,9 +73,9 @@ public class ipUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-//            if (connection != null) {
-//                connection.disconnect();// 关闭连接
-//            }
+            if (connection != null) {
+                connection.disconnect();// 关闭连接
+            }
         }
         return null;
     }
