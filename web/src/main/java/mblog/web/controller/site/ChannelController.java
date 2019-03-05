@@ -14,6 +14,9 @@ import mblog.modules.blog.data.PostVO;
 import mblog.modules.blog.entity.Channel;
 import mblog.modules.blog.service.ChannelService;
 import mblog.modules.blog.service.PostService;
+import mblog.nblog.entity.IP;
+import mblog.nblog.service.IPSerivce;
+import mblog.nblog.utils.ipUtils;
 import mblog.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 /**
  * Channel 主页
@@ -36,6 +40,8 @@ public class ChannelController extends BaseController {
 	private ChannelService channelService;
 	@Autowired
 	private PostService postService;
+	@Autowired
+	private IPSerivce ipSerivce;
 	
 	@RequestMapping("/channel/{id}")
 	public String channel(@PathVariable Integer id, ModelMap model,
@@ -56,13 +62,27 @@ public class ChannelController extends BaseController {
 	}
 
 	@RequestMapping("/view/{id}")
-	public String view(@PathVariable Long id, ModelMap model) {
+	public String view(@PathVariable Long id, ModelMap model,HttpServletRequest request) {
 		PostVO view = postService.get(id);
 
 		Assert.notNull(view, "该文章已被删除");
 
 		postService.identityViews(id);
 		model.put("view", view);
+		IP ip = saveip(request,view.getTitle());
+		ipSerivce.saveIP(ip);
 		return view(Views.ROUTE_POST_VIEW);
+	}
+
+	public static IP saveip(HttpServletRequest request,String title){
+		IP ip = new IP();
+		ip.setIPAddress(ipUtils.getIpAddr(request));
+		ip.setLoginTime(LocalDateTime.now().toString());
+		ip.setPostTitle(title);
+		try {
+			ip.setIPAddressName(ipUtils.getAddresses("ip="+ipUtils.getIpAddr(request),"utf-8"));
+		}
+		catch (Exception e){}
+		return ip;
 	}
 }

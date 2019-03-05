@@ -25,6 +25,8 @@ public class IP {
         this.IPAddressName = IPAddressName;
     }
 
+    public String postTitle;
+
     @Override
     public String toString() {
         return "IP{" +
@@ -32,7 +34,16 @@ public class IP {
                 ", IPAddress='" + IPAddress + '\'' +
                 ", loginTime='" + loginTime + '\'' +
                 ", IPAddressName='" + IPAddressName + '\'' +
+                ", postTitle='" + postTitle + '\'' +
                 '}';
+    }
+
+    public String getPostTitle() {
+        return postTitle;
+    }
+
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
 
     public void setLoginTime(String loginTime) {
